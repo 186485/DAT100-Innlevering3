@@ -3,7 +3,7 @@ package no.hvl.dat100.oppgave1;
 import no.hvl.dat100.common.TODO;
 
 public abstract class Innlegg {
-	
+	//Lager private objektvariabler
 	private int id;
 	private String bruker;
 	private String dato;
@@ -13,7 +13,7 @@ public abstract class Innlegg {
 	public Innlegg() {
 		
 	}
-	
+	//henter variablene til innleggene 
 	public Innlegg(int id, String bruker, String dato) {
 		
 		this.id=id;
@@ -21,7 +21,7 @@ public abstract class Innlegg {
 		this.dato=dato;
 		this.likes=0;
 	}
-
+	//henter variablene til innleggene ink likes
 	public Innlegg(int id, String bruker, String dato, int likes) {
 		
 		this.id=id;
@@ -30,7 +30,7 @@ public abstract class Innlegg {
 		this.likes=likes;
 		
 	}
-	
+	//set/get metoder
 	public String getBruker() {
 		return bruker;
 	}
@@ -63,7 +63,7 @@ public abstract class Innlegg {
 	public void doLike () {
 		likes+=1;
 	}
-	
+	//Sjekker om innlegg/id er lik annet innlegg/id
 	public boolean erLik(Innlegg innlegg) {
 		
 		id=getId();
@@ -77,7 +77,7 @@ public abstract class Innlegg {
 		
 	}
 	
-	@Override
+	//Lager utskrifts metode
 	public String toString() {
 		String toStreng=(getId()+"\n"+getBruker()+"\n"+getDato()+"\n"+getLikes()+"\n");
 		return toStreng;
